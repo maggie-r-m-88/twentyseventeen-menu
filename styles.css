@@ -13,22 +13,22 @@
 .has-header-image.twentyseventeen-front-page .custom-header-media img {
     position: absolute; 
 }
-@media screen and (min-width: 48em) {
+@media screen and  (-webkit-min-device-pixel-ratio:0) and (min-width: 48em) {
     .has-header-image .custom-header {
         display: block;
         height: auto;
         margin-bottom: 0 !important; /* This will override the fixed height that's being set here in global.js  */
     }
-    .has-header-image .custom-header-media {
+    .has-header-image .custom-header-media,.twentyseventeen-front-page.has-header-image .custom-header-media, .twentyseventeen-front-page.has-header-video .custom-header-media, .home.blog.has-header-image .custom-header-media {
         position: relative;
-        height: 100vh;
+        height: 75vh;
         max-height: 100%;
         overflow: hidden;
     }
     .has-header-image .custom-header-media:before {
         height: 33%;
     }
-    .has-header-image:not(.twentyseventeen-front-page):not(.home) .custom-header-media, .has-header-video:not(.twentyseventeen-front-page):not(.home) .custom-header-media {
+    .has-header-image:not(.twentyseventeen-front-page):not(.home) .custom-header-media, .has-header-video:not(.twentyseventeen-front-page):not(.home) .custom-header-media, .twentyseventeen-front-page.has-header-image .custom-header-media {
         bottom: 0;
         height: 75vh;
         left: 0;
@@ -36,7 +36,7 @@
         right: 0;
         top: 0;
     }
-    .has-header-image:not(.twentyseventeen-front-page):not(.home).admin-bar .custom-header-media {
+    .has-header-image:not(.twentyseventeen-front-page):not(.home).admin-bar .custom-header-media, .admin-bar.twentyseventeen-front-page.has-header-image .custom-header-media{
         height: calc(75vh - 32px);
     }
 
@@ -51,10 +51,11 @@
         margin-bottom: 0 !important;  /* This will override the fixed height that's being set here in global.js  */
        
     }
+
 }
 
 @media screen and (min-width: 49em) {
-    .has-header-image .custom-header-media img,  .has-header-image:not(.twentyseventeen-front-page):not(.home) .custom-header-media img{
+     .has-header-image.twentyseventeen-front-page .custom-header-media img, .has-header-image .custom-header-media img,  .has-header-image:not(.twentyseventeen-front-page):not(.home) .custom-header-media img{
         position: relative; 
     }
 
