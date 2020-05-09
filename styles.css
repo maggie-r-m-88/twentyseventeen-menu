@@ -11,7 +11,7 @@
     height: 75vh;
 }
 .has-header-image.twentyseventeen-front-page .custom-header-media img {
-    position: absolute;
+    position: absolute; 
 }
 @media screen and (min-width: 48em) {
     .has-header-image .custom-header {
@@ -30,15 +30,16 @@
     }
     .has-header-image:not(.twentyseventeen-front-page):not(.home) .custom-header-media, .has-header-video:not(.twentyseventeen-front-page):not(.home) .custom-header-media {
         bottom: 0;
-        height: 100vh;
+        height: 75vh;
         left: 0;
         position: relative;
         right: 0;
         top: 0;
     }
     .has-header-image:not(.twentyseventeen-front-page):not(.home).admin-bar .custom-header-media {
-        height: calc(100vh - 32px);
+        height: calc(75vh - 32px);
     }
+
     .has-header-image .site-branding {
         bottom: 0;
         display: block;
@@ -50,4 +51,11 @@
         margin-bottom: 0 !important;  /* This will override the fixed height that's being set here in global.js  */
        
     }
+}
+
+@media screen and (min-width: 49em) {
+    .has-header-image .custom-header-media img,  .has-header-image:not(.twentyseventeen-front-page):not(.home) .custom-header-media img{
+        position: relative; 
+    }
+
 }
