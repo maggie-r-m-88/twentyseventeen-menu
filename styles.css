@@ -7,19 +7,39 @@
 .has-header-image .custom-header {
     width: 100%;
     display: table;
-    height: 300px;
+    height: 500px;
     height: 75vh;
 }
-.has-header-image.twentyseventeen-front-page .custom-header-media img {
-    position: absolute; 
+.has-header-image .custom-header-media img, .has-header-video .custom-header-media video, .has-header-image:not(.twentyseventeen-front-page):not(.home) .custom-header-media img {
+    max-width: 100%;
 }
-@media screen and  (-webkit-min-device-pixel-ratio:0) and (min-width: 48em) {
+.has-header-image.twentyseventeen-front-page .custom-header-media img {
+    position: absolute;
+}
+
+/**
+ *
+ * Header image stretches 50% of viewport on mobile.
+ */
+
+@media screen and (max-width: 30em) {
+    .has-header-image.twentyseventeen-front-page .custom-header, .has-header-image .custom-header {
+        height: 50vh;
+    }
+}
+
+/**
+ *
+ * Image is stretched to 75% viewport height on large screens.
+ */
+
+@media screen and (min-width: 48em) {
     .has-header-image .custom-header {
         display: block;
         height: auto;
         margin-bottom: 0 !important; /* This will override the fixed height that's being set here in global.js  */
     }
-    .has-header-image .custom-header-media,.twentyseventeen-front-page.has-header-image .custom-header-media, .twentyseventeen-front-page.has-header-video .custom-header-media, .home.blog.has-header-image .custom-header-media {
+    .has-header-image .custom-header-media, .twentyseventeen-front-page.has-header-image .custom-header-media, .twentyseventeen-front-page.has-header-video .custom-header-media, .home.blog.has-header-image .custom-header-media {
         position: relative;
         height: 75vh;
         max-height: 100%;
@@ -36,10 +56,9 @@
         right: 0;
         top: 0;
     }
-    .has-header-image:not(.twentyseventeen-front-page):not(.home).admin-bar .custom-header-media, .admin-bar.twentyseventeen-front-page.has-header-image .custom-header-media{
-        height: calc(75vh - 32px);
+    .has-header-image:not(.twentyseventeen-front-page):not(.home).admin-bar .custom-header-media, .admin-bar.twentyseventeen-front-page.has-header-image .custom-header-media {
+        height: calc(75vh - 32px); /* Accounts for top bar when viewing within Wordpress admin */
     }
-
     .has-header-image .site-branding {
         bottom: 0;
         display: block;
@@ -48,15 +67,17 @@
         padding-top: 0;
         position: absolute;
         width: 100%;
-        margin-bottom: 0 !important;  /* This will override the fixed height that's being set here in global.js  */
-       
+        margin-bottom: 0 !important; /* This will override the fixed height that's being set here in global.js  */  
     }
-
 }
+/**
+ *
+ * Fix for image fitting full 100% on desktops
+ */
 
-@media screen and (min-width: 49em) {
-     .has-header-image.twentyseventeen-front-page .custom-header-media img, .has-header-image .custom-header-media img,  .has-header-image:not(.twentyseventeen-front-page):not(.home) .custom-header-media img{
-        position: relative; 
+@media screen and (min-width: 50em) {
+    .has-header-image.twentyseventeen-front-page .custom-header-media img, .has-header-image .custom-header-media img, .has-header-image:not(.twentyseventeen-front-page):not(.home) .custom-header-media img {
+        position: relative;
+        -ms-transform: translateX(-50%) translateY(0px);
     }
-
 }
